@@ -5,7 +5,7 @@ exports.commands = {
 	staffhelp: function (target, room, user) {
 		if (!this.can('lock')) return false;
 		if (!this.canTalk()) return this.errorReply("You cannot do this while unable to speak.");
-		let out = '<b><u><font color="#008ae6"; size="3"><center>Wavelength\'s Global Staff Commands:</center></u></b></font><br />' +
+		let out = '<b><u><font color="#008ae6"; size="3"><center>' + Config.serverName + '\'s Global Staff Commands:</center></u></b></font><br />' +
 			'<details><summary>Global Driver Commands (%)</summary>' +
 			'<b>/warn OR /k [user], [reason]</b> - warns a user and shows the Pokémon Showdown rules <br />' +
 			'<b>/mute OR /m [user], [reason]</b> - mutes a user for seven minute with a reason <br />' +

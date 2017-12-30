@@ -34,7 +34,7 @@ WL.showNews = function (userid, user) {
 		notifiedUsers[userid] = setTimeout(() => {
 			delete notifiedUsers[userid];
 		}, 60 * 60 * 1000);
-		return user.send(`|pm| WL Server|${user.getIdentity()}|/raw ${newsDisplay}`);
+		return user.send(`|pm| ${Config.serverName} News|${user.getIdentity()}|/raw ${newsDisplay}`);
 	}
 };
 
@@ -46,7 +46,7 @@ exports.commands = {
 		display: 'view',
 		view: function (target, room, user) {
 			if (!this.runBroadcast()) return;
-			let output = `<center><strong>Wavelength News:</strong></center>${generateNews().join(`<hr>`)}${showSubButton(user.userid)}`;
+			let output = `<center><strong>${Config.serverName} News:</strong></center>${generateNews().join(`<hr>`)}${showSubButton(user.userid)}`;
 			if (this.broadcasting) return this.sendReplyBox(`<div class="infobox-limited">${output}</div>`);
 			return user.send(`|popup||wide||html|${output}`);
 		},
@@ -84,21 +84,21 @@ exports.commands = {
 			if (!user.named) return this.errorReply('You must choose a name before subscribing');
 			if (Db.NewsSubscribers.has(user.userid)) return this.errorReply("You are alreading subscribing Wavelength News.");
 			Db.NewsSubscribers.set(user.userid, true);
-			this.sendReply("You have subscribed Wavelength News.");
-			this.popupReply("|wide||html|You will receive Wavelength News automatically once you connect to the Wavelength next time.<br><hr><center><button class='button' name='send' value ='/news'>View News</button></center>");
+			this.sendReply("You have subscribed " + Config.serverName + " News.");
+			this.popupReply("|wide||html|You will receive " + Config.serverName + " News automatically once you connect to the Wavelength next time.<br><hr><center><button class='button' name='send' value ='/news'>View News</button></center>");
 		},
 		unsubscribe: function (target, room, user) {
 			if (!user.named) return this.errorReply('You must choose a name before unsubscribing');
-			if (!Db.NewsSubscribers.has(user.userid)) return this.errorReply("You have not subscribed Wavelength News.");
+			if (!Db.NewsSubscribers.has(user.userid)) return this.errorReply("You have not subscribed " + Config.serverName + " News.");
 			Db.NewsSubscribers.remove(user.userid);
-			this.sendReply("You have unsubscribed Wavelength News.");
-			this.popupReply("|wide||html|You will no longer automatically receive Wavelength News.<br><hr><center><button class='button' name='send' value='/news'>View News</button></center>");
+			this.sendReply("You have unsubscribed " + Config.serverName + " News.");
+			this.popupReply("|wide||html|You will no longer automatically receive " + Config.serverName + " News.<br><hr><center><button class='button' name='send' value='/news'>View News</button></center>");
 		},
 	},
-	serverannouncementshelp: ["/news view - Views current Wavelength news.",
+	serverannouncementshelp: ["/news view - Views current " + Config.serverName + " news.",
 		"/news delete [news title] - Deletes announcement with the [title]. Requires @, &, ~",
 		"/news add [news title], [news desc] - Adds news [news]. Requires @, &, ~",
-		"/news subscribe - Subscribes to Wavelength News.",
-		"/news unsubscribe - Unsubscribes to Wavelength News.",
+		"/news subscribe - Subscribes to " + Config.serverName + " News.",
+		"/news unsubscribe - Unsubscribes to " + Config.serverName + " News.",
 	],
 };
