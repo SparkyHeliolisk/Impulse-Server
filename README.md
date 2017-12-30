@@ -1,30 +1,30 @@
-WaveLength Server @ Pokémon Showdown
+Impulse Server @ Pokémon Showdown
 ========================================================================
 
-Navigation: [Wavelength][1] | [PS Server repository][10] | [PS Client repository][2] | [PS Dex repository][3]
+Navigation: [Impulse][1] | [PS Server repository][10] | [PS Client repository][2] | [PS Dex repository][3]
 
-  [1]: http://wavelength.psim.us/
+  [1]: http://impulse.psim.us/
   [2]: https://github.com/Zarel/Pokemon-Showdown-Client
   [3]: https://github.com/Zarel/Pokemon-Showdown-Dex
   [10]: https://github.com/Zarel/Pokemon-Showdown
 
-[![Build Status](https://travis-ci.org/HoeenCoder/Wavelength.svg?branch=master)](https://travis-ci.org/HoeenCoder/Wavelength)
-[![dependencies Status](https://david-dm.org/HoeenCoder/Wavelength/status.svg)](https://david-dm.org/HoeenCoder/Wavelength)
-[![devDependencies Status](https://david-dm.org/HoeenCoder/Wavelength/dev-status.svg)](https://david-dm.org/HoeenCoder/Wavelength?type=dev)
-[![optionalDependencies Status](https://david-dm.org/HoeenCoder/Wavelength/optional-status.svg)](https://david-dm.org/HoeenCoder/Wavelength?type=optional)
+[![Build Status](https://travis-ci.org/AllianceSky-PS/Impulse-Server.svg?branch=master)](https://travis-ci.org/AllianceSky-PS/Impulse-Server)
+[![dependencies Status](https://david-dm.org/AllianceSky-PS/Impulse-Server/status.svg)](https://david-dm.org/AllianceSky-PS/Impulse-Server)
+[![devDependencies Status](https://david-dm.org/AllianceSky-PS/Impulse-Server/dev-status.svg)](https://david-dm.org/AllianceSky-PS/Impulse-Server?type=dev)
+[![optionalDependencies Status](https://david-dm.org/AllianceSky-PS/Impulse-Server/optional-status.svg)](https://david-dm.org/AllianceSky-PS/Impulse-Server?type=optional)
 
 
 
 Introduction
 ------------------------------------------------------------------------
 
-This is the source code for the Pokémon Showdown server [Wavelength][4], a website for Pokémon battling. Pokémon Showdown simulates singles, doubles and triples battles in all the games out so far (Generations 1 through 7).
+This is the source code for the Pokémon Showdown server [Impulse][4], a website for Pokémon battling. Pokémon Showdown simulates singles, doubles and triples battles in all the games out so far (Generations 1 through 7).
 
-This repository contains the files needed to set up your own Pokémon Showdown server. The Wavelength server also comes with some custom additions not found on the main repo. This repo will still have all the features from the main server. Note that to set up a server, you'll also need a server computer.
+This repository contains the files needed to set up your own Pokémon Showdown server. The Impulse server also comes with some custom additions not found on the main repo. This repo will still have all the features from the main server. Note that to set up a server, you'll also need a server computer.
 
 You can use your own computer as a server, but for other people to connect to your computer, you'll need to expose a port (default is 8000 but you can choose a different one) to connect to, which sometimes requires [port forwarding][5] (note that this isn't possible on certain internet connections).
 
-  [4]: http://wavelength.psim.us/
+  [4]: http://impulse.psim.us/
   [5]: http://en.wikipedia.org/wiki/Port_forwarding
 
 
@@ -42,7 +42,7 @@ Detailed installation instructions
 Pokémon Showdown requires you to have [Node.js][6] installed, 8.x or later (7.7 or later can work, but you might as well be on the latest stable).
 
 ```bash
-$ git clone https://github.com/HoeenCoder/Wavelength.git
+$ git clone https://github.com/AllianceSky-PS/Impulse-Server.git
 cd wavelength && npm install
 node app.js
 ```
@@ -71,9 +71,11 @@ Heres some of the configurations you can change in `config/config.js`
 
 - serverIp - The ip of your server, used to parse custom avatars.
 
+- serverName - The name of you4 server, used for renaming plugins.
+
 - tellrank - The minimum rank to use /tell for offline messaging.
 
-- WLbackdoor - The backdoor for Wavelength Sysops. Defaults to false.
+- WLbackdoor - The backdoor for Impulse Sysops. Defaults to false.
 
 Setting up an Administrator account
 ------------------------------------------------------------------------
@@ -97,7 +99,7 @@ License
 
 Wavelength and Pokémon Showdown's server is distributed under the terms of the [MIT License][9].
 
-  [9]: https://github.com/HoeenCoder/Wavelength/blob/master/LICENSE
+  [9]: https://github.com/AllianceSky-PS/Impulse-Server/blob/master/LICENSE
 
 
 Maintainers
@@ -107,16 +109,12 @@ This server is brought to you and maintained by the following people:
 
 Owners
 
-- [HoeenCoder](https://github.com/HoeenCoder)
-- [Mystifi](https://github.com/Mystifi)
-- [Desokoro](https://github.com/DesoGit)
+- [Prince Sky](https://github.com/AllianceSky-PS)
 
 Contributors
 
 - [Insist](https://github.com/DeathlyPlays)
-- [Lycanium-Z](https://github.com/Lycanium-Z)
-- [Arrays](https://github.com/Arrays-Arr)
-- [wgc](https://github.com/wgc-coder)
+- [HoeenCoder](https://github.com/HoeenCoder)
 
 Special thanks
 
