@@ -394,9 +394,9 @@ exports.Formats = [
 	},
 
 	///////////////////////////////////////////////////////
-	// Wavelength Metagames
+	// Server Metagames
 	{
-		section: 'Wavelength Metagames',
+		section: '' + Config.serverName + ' Metagames',
 		column: 2,
 	},
 	{

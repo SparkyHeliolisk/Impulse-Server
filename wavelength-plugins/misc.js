@@ -164,7 +164,7 @@ exports.commands = {
 	showhelp: ["/show - Displays user's global rank. Requires: & ~"],
 
 	credits: function (target, room, user) {
-		let popup = "|html|" + "<font size=5 color=#0066ff><u><b>Wavelength Credits</b></u></font><br />" +
+		let popup = "|html|" + "<font size=5 color=#0066ff><u><b>" + Config.serverName + " Credits</b></u></font><br />" +
 			"<br />" +
 			"<u><b>Server Maintainers:</u></b><br />" +
 			"- " + WL.nameColor('Desokoro', true) + " (Owner, Sysadmin, Policy Admin, Server Host)<br />" +
@@ -220,7 +220,7 @@ exports.commands = {
 		if (!this.can('pmall')) return false;
 		if (!target) return this.parse('/help pmall');
 
-		let pmName = ' WL Server';
+		let pmName = ' ' + Config.serverName + ' Server';
 		Users.users.forEach(curUser => {
 			let message = '|pm|' + pmName + '|' + curUser.getIdentity() + '|' + target;
 			curUser.send(message);
@@ -234,7 +234,7 @@ exports.commands = {
 		if (!this.can('forcewin')) return false;
 		if (!target) return this.parse('/help pmallstaff');
 
-		let pmName = ' WL Server';
+		let pmName = ' ' + Config.serverName + ' Server';
 
 		Users.users.forEach(curUser => {
 			if (!curUser.isStaff) return;
@@ -308,16 +308,6 @@ exports.commands = {
 		if (names.length < 1) return this.sendReplyBox('There are no users of the rank <font color="#24678d"><b>' + Chat.escapeHTML(Config.groups[target].name) + '</b></font> currently online.');
 		return this.sendReplyBox('There ' + (names.length === 1 ? 'is' : 'are') + ' <font color="#24678d"><b>' + names.length + '</b></font> ' + (names.length === 1 ? 'user' : 'users') + ' with the rank <font color="#24678d"><b>' + Config.groups[target].name + '</b></font> currently online.<br />' + names.join(', '));
 	},
-
-	'!wavelengthrepo': true,
-	wl: 'wavelengthrepo',
-	wlr: 'wavelengthrepo',
-	repo: 'wavelengthrepo',
-	wavelengthrepo: function (target, room, user) {
-		if (!this.runBroadcast()) return;
-		this.sendReply(`|raw|<a href="https://github.com/HoeenCoder/Wavelength">Wavelength's repo</a>`);
-	},
-	wavelengthrepohelp: ["/wavelengthrepo - Links to the Wavelength repository on Github."],
 
 	'!seen': true,
 	seen: function (target, room, user) {
@@ -511,7 +501,7 @@ exports.commands = {
 		if (!target) return this.sendReply("/rmall [message] - Sends a pm to all users in the room.");
 		target = target.replace(/<(?:.|\n)*?>/gm, '');
 
-		let pmName = ' Wavelength Server';
+		let pmName = '' + Config.serverName + ' Server';
 
 		for (let i in room.users) {
 			let message = '|pm|' + pmName + '|' + room.users[i].getIdentity() + '| ' + target;
@@ -533,12 +523,6 @@ exports.commands = {
 		Users.get(userid).joinRoom(roomid);
 	},
 	forcejoinhelp: ["/forcejoin [target], [room] - Forces a user to join a room"],
-
-	'!discord': true,
-	discord: function () {
-		if (!this.runBroadcast()) return;
-		this.sendReplyBox("<a href=\"https://discord.gg/cwfAqdN\">The Official Wavelength Discord</a>");
-	},
 
 	ac: 'autoconfirm',
 	autoconfirm: function (target, room, user) {
