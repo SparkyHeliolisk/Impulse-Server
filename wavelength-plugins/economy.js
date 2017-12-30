@@ -6,8 +6,8 @@ const fs = require('fs');
 // Ideally, this should be zero.
 const DEFAULT_AMOUNT = 0;
 
-global.currencyName = 'Stardust';
-global.currencyPlural = 'Stardust';
+global.currencyName = 'Bucks';
+global.currencyPlural = 'Bucks';
 
 let Economy = global.Economy = {
 	/**
@@ -66,6 +66,7 @@ let Economy = global.Economy = {
 			this.writeMoney(users[i], amount);
 		}
 	},
+
 	logTransaction: function (message) {
 		if (!message) return false;
 		fs.appendFile('logs/transactions.log', '[' + new Date().toUTCString() + '] ' + message + '\n', () => {});
@@ -131,10 +132,8 @@ exports.commands = {
 		});
 	},
 
-	gs: 'givecurrency', //You can change "gs" and "givestardust" to your currency name for an alias that applies to your currency Example: AwesomeBucks could be "ga" and "giveawesomebucks"
-	givestardust: 'givecurrency',
-	gc: 'givecurrency',
-	givecurrency: function (target, room, user, connection, cmd) {
+	givebuck: 'givebucks', //You can change "gs" and "givestardust" to your currency name for an alias that applies to your currency Example: AwesomeBucks could be "ga" and "giveawesomebucks"
+	givebucks: function (target, room, user, connection, cmd) {
 		if (!this.can('forcewin')) return false;
 		if (!target) return this.sendReply("Usage: /" + cmd + " [user], [amount]");
 		let splitTarget = target.split(',');
@@ -166,10 +165,8 @@ exports.commands = {
 		});
 	},
 
-	ts: 'takecurrency', //You can change "ts" and "takestardust" to your currency name for an alias that applies to your currency Example: AwesomeBucks could be "ta" and "takeawesomebucks"
-	takestardust: 'takecurrency',
-	tc: 'takecurrency',
-	takecurrency: function (target, room, user, connection, cmd) {
+	takebuck: 'takebucks', //You can change "ts" and "takestardust" to your currency name for an alias that applies to your currency Example: AwesomeBucks could be "ta" and "takeawesomebucks"
+	takebucks: function (target, room, user, connection, cmd) {
 		if (!this.can('forcewin')) return false;
 		if (!target) return this.sendReply("Usage: /" + cmd + " [user], [amount]");
 		let splitTarget = target.split(',');
@@ -201,8 +198,8 @@ exports.commands = {
 		});
 	},
 
-	confirmtransferstardust: 'transfercurrency', //You can change "transferstardust" and "confirmtransferstardust" to your currency name for an alias that applies to your currency Example: AwesomeBucks could be "transferawesomebucks" and "confirmtransferawesomebucks"
-	transferstardust: 'transfercurrency',
+	transferbuck: 'transfercurrency', //You can change "transferstardust" and "confirmtransferstardust" to your currency name for an alias that applies to your currency Example: AwesomeBucks could be "transferawesomebucks" and "confirmtransferawesomebucks"
+	transferbucks: 'transfercurrency',
 	confirmtransfercurrency: 'transfercurrency',
 	transfercurrency: function (target, room, user, connection, cmd) {
 		if (!target) return this.sendReply("Usage: /" + cmd + " [user], [amount]");
@@ -289,8 +286,8 @@ exports.commands = {
 		this.sendReplyBox(rankLadder('Richest Users', currencyPlural, keys.slice(0, target), 'money') + '</div>');
 	},
 
-	resetstardust: 'resetmoney',
-	resetmoney: function (target, room, user) {
+	resetbuck: 'resetmoney',
+	resetbucks: function (target, room, user) {
 		if (!this.can('roomowner')) return false;
 		if (!target) return this.parse('/help resetmoney');
 		target = toId(target);
@@ -323,7 +320,7 @@ exports.commands = {
 
 	economy: 'economystats',
 	currency: 'economystats',
-	stardust: 'economystats',
+	bucks: 'economystats',
 	economystats: function (target, room, user) {
 		if (!this.runBroadcast()) return;
 		const users = Db.currency.keys().map(curUser => ({amount: Db.currency.get(curUser)}));

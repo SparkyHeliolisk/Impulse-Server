@@ -93,6 +93,8 @@ if (Config.watchconfig) {
 global.WL = {};
 
 global.Db = require('nef')(require('nef-fs')('config/db'));
+global.Sb = require('origindb')('config/sb');
+global.sqlite3 = require('sqlite3');
 
 global.Monitor = require('./monitor');
 
