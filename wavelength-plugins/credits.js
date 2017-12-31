@@ -53,8 +53,8 @@ exports.commands = {
 			msg += '<button class="button" name="send" value="/customicon set ' + user.userid + ', ' + target[1] + '">Apply icon</button></center>';
 			delete user.tokens[target[0]];
 			return WL.messageSeniorStaff(msg);
-		case 'pbg':
-			msg += '/html <center>' + WL.nameColor(user.name, true) + ' has redeemed a profile background token.<br/><img src="' + target[1] + '" alt="pbg"/><br/>';
+		case 'profilebackground':
+			msg += '/html <center>' + WL.nameColor(user.name, true) + ' has redeemed a profile background token.<br/>';
 			msg += '<button class="button" name="send" value="/pbg set ' + user.userid + ', ' + target[1] + '">Apply Profile Background</button></center>';
 			delete user.tokens[target[0]];
 			return WL.messageSeniorStaff(msg);
@@ -94,7 +94,6 @@ exports.commands = {
 		'/usetoken [token], [argument(s)] - Redeem a token from the shop. Accepts the following arguments: ',
 		'/usetoken avatar, [image] | /usetoken declare, [message] | /usetoken color, [hex code]',
 		'/usetoken icon [image] | /usetoken title, [name], [hex code] | /usetoken emote, [name], [image]',
-		'/usetoken pbg [image] | /usetoken pmusic, link, title',
 		'/usetoken disableintroscroll [room name]',
 	],
 
