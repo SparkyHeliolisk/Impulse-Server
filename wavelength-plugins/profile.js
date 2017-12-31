@@ -208,7 +208,7 @@ exports.commands = {
 			Sb("titles").delete(userid);
 			if (Users.get(userid)) {
 				Users(userid).popup(
-					'|html|' + Wl.nameColor(user.name, true) + " has removed your custom title."
+					'|html|' + WL.nameColor(user.name, true) + " has removed your custom title."
 				);
 			}
 			this.logModCommand(user.name + " removed " + userid + "'s custom title.");
@@ -681,7 +681,6 @@ exports.commands = {
 		    if (!Sb("pokemon").has(user)) return '';
 		    return '' + poke + '';
 		}
-		
 
 		function song(fren) {
 			let song = Sb("music").get([fren, 'link']);
