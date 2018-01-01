@@ -716,7 +716,6 @@ exports.commands = {
 				profile += `&nbsp;${showTeam(toId(username))}<br />`;
 				profile += `&nbsp;${song(toId(username))}`;
 				profile += `&nbsp;</div>`;
-				profile += `<br clear="all">`;
 				self.sendReplyBox(profile);
 			});
 		}
