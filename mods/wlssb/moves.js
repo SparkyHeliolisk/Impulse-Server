@@ -1,6 +1,26 @@
 "use strict";
 
 exports.BattleMovedex = {
+	// SparkyHeliolisk
+	icydeath: {
+		accuracy: 100,
+		basePower: 150,
+		category: "Special",
+		id: "icydeath",
+		isNonstandard: true,
+		name: "Icy Death",
+		pp: 5,
+		desc: "No additional effects",
+		priority: 0.5,
+		target: "normal",
+		flags: {protect: 1, mirror: 1},
+		type: "Ice",
+		onPrepareHit: function (target, source) {
+			this.attrLastMove('[still]');
+			this.add('-anim', source, "Moonblast", source);
+			this.add('-anim', source, "Ice Beam", target);
+		},
+	},
 	// HoeenHero
 	scripting: {
 		category: "Status",
