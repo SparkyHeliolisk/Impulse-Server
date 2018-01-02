@@ -195,6 +195,21 @@ class RandomSeasonalRegStaffTeams extends RandomTeams {
 				},
 				nature: 'Naughty',
 			},
+				'@SparkyHeliolisk': {
+				species: 'Ninetales-Alola',
+				ability: '(Placeholder)',
+				item: 'Leftovers',
+				gender: 'F',
+				moves: ['Ice Beam', 'Dark Pulse', 'Aura Sphere', 
+				],
+				signatureMove: '(Placeholder)',
+				evs: {
+					spa: 252,
+					spd: 4,
+					spe: 252,
+				},
+				nature: 'Modest',
+			},
 			'@Ashley the Pikachu': {
 				species: 'Pikachu-Cosplay',
 				ability: 'Primal Surge',
