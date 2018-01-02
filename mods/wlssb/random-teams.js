@@ -195,7 +195,7 @@ class RandomSeasonalRegStaffTeams extends RandomTeams {
 				},
 				nature: 'Naughty',
 			},
-				'@SparkyHeliolisk': {
+			'@SparkyHeliolisk': {
 				species: 'Ninetales-Alola',
 				ability: '(Placeholder)',
 				item: 'Leftovers',
