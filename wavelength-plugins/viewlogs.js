@@ -258,4 +258,4 @@ function parseMessage(message, user) {
 		break;
 	}
 	return message;
-} 
+}
