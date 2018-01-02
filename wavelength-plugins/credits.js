@@ -15,7 +15,7 @@ exports.commands = {
 			 "<u><b>Contributors:</b></u><br />" +
 			 "- " + WL.nameColor('A Helpful Rayquaza', true) + " (Development, Policy)<br />" +
 			 "- " + WL.nameColor('SnorlaxTheRain', true) + " (Policy)<br />" +
-			 "- " + WL.nameColor('Xirizu', true) + " (Aura Storm)<br />" +
+			 "- " + WL.nameColor('Xirizu', true) + " (Aura Storm, Policy Admin)<br />" +
 			 "<br />" +
 			 "<u><b>Special Thanks:</b></u><br />" +
 			 "- Our Staff Members<br />" +
