@@ -24,7 +24,7 @@ exports.commands = {
 			 //"- " + WL.nameColor(', true) + " ()<br />" +
 			 "<u><b>Special Thanks:</b></u><br />" +
 			 "- Our Staff Members<br />" +
-			 "- Our Regular Users<br />":
+			 "- Our Regular Users<br />";
 		user.popup(popup);
 	},
 
