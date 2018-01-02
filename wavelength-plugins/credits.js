@@ -9,16 +9,18 @@ exports.commands = {
 			 "- " + WL.nameColor('Anrin N', true) + " (Owner, Sysadmin, Technical Admin, Server Host)<br />" +
 			 "<br />" +
 			 "<u><b>Major Contributors:</b></u><br />" +
-			 "- " + WL.nameColor('Hoeen Hero', true) + " (Base Repository)<br />" +
-			 "- " + WL.nameColor('Insist', true) + " (Base Repository)<br />" +
-			 "- " + WL.nameColor('Sparky Heliolisk', true) + " (SSB Leader)<br/>" +
+			 "- " + WL.nameColor('shivay', true) + " (Techinical Admin, Development)<br/>" +
+			 "- " + WL.nameColor('Sparky Heliolisk', true) + " (SSB Leader, Development,Media)<br/>" +
 			 "<br />" +
 			 "<u><b>Contributors:</b></u><br />" +
-			 "- " + WL.nameColor('A Helpful Rayquaza', true) + " (Development)<br />" +
+			 "- " + WL.nameColor('A Helpful Rayquaza', true) + " (Development, Policy)<br />" +
+			 "- " + WL.nameColor('SnorlaxTheRain', true) + " (Policy)<br />" +
+			 "- " + WL.nameColor('Xirizu', true) + " (Aura Storm)<br />" +
 			 "<br />" +
 			 "<u><b>Special Thanks:</b></u><br />" +
 			 "- Our Staff Members<br />" +
-			 "- Our Regular Users<br />";
+			 "- Our Regular Users<br />" +
+			 "- Wavelength and Exiled for Base Repository<br />";
 		user.popup(popup);
 	},
 
