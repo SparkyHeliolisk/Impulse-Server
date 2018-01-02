@@ -200,7 +200,7 @@ class RandomSeasonalRegStaffTeams extends RandomTeams {
 				ability: '(Placeholder)',
 				item: 'Leftovers',
 				gender: 'F',
-				moves: ['Ice Beam', 'Dark Pulse', 'Aura Sphere', 
+				moves: ['Ice Beam', 'Dark Pulse', 'Aura Sphere',
 				],
 				signatureMove: '(Placeholder)',
 				evs: {
