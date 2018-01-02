@@ -19,7 +19,7 @@ exports.commands = {
 			 "<br />" +
 			 "<u><b>Special Thanks:</b></u><br />" +
 			 "- Our Staff Members<br />" +
-			 "- Our Regular Users<br />";
+			 "- Our Regular Users<br />" +
 		    "- Wavelength and Exiled for Pulgins<br />";
 		user.popup(popup);
 	},
