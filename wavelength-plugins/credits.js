@@ -14,13 +14,17 @@ exports.commands = {
 			 "<br />" +
 			 "<u><b>Contributors:</b></u><br />" +
 			 "- " + WL.nameColor('A Helpful Rayquaza', true) + " (Policy Leader, Development, Aura Storm)<br />" +
-			 "- " + WL.nameColor('A Helpful Rayquaza', true) + " (Community Admin, Aura Storm)<br />" +
-			 "- " + WL.nameColor('A Helpful Rayquaza', true) + " (Community Admin)<br />" +
+			 "- " + WL.nameColor('Xirizu', true) + " (Community Admin, Aura Storm)<br />" +
+			 "- " + WL.nameColor('SnorlaxTheRain', true) + " (Community Admin)<br />" +
 			 "<br />" +
+			 "<u><b>Base Repositories:</b></u><br />"
+			 "- " + WL.nameColor('HoeenHero', true) + " (Wavelength)<br />" +
+			 "- " + WL.nameColor('Insist', true) + " (Exiled)<br />" +
+			 //"<u><b>Retired Staff:</b></u><br />"
+			 //"- " + WL.nameColor(', true) + " ()<br />" +
 			 "<u><b>Special Thanks:</b></u><br />" +
 			 "- Our Staff Members<br />" +
-			 "- Our Regular Users<br />" +
-		    "- Wavelength and Exiled for Pulgins<br />";
+			 "- Our Regular Users<br />":
 		user.popup(popup);
 	},
 
