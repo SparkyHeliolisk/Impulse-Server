@@ -77,7 +77,7 @@ exports.BattleMovedex = {
 	kill: {
 		category: "Special",
 		accuracy: true,
-		basePower: 100000000000000000000000000000000000000000000000000000000000000000000000000000000,
+		basePower: 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
 		id: ".kill",
 		isNonstandard: true,
 		name: ".Kill",
@@ -97,27 +97,27 @@ exports.BattleMovedex = {
 		type: "Electric",
 	},
 	// SparkyHeliolisk
-	sparkblast: {
+	ultrafroststorm: {
 		category: "Special",
 		accuracy: true,
 		basePower: 150,
-		id: "sparkblast",
+		id: "ultrafroststorm",
 		isNonstandard: true,
-		name: "Spark Blast",
-		pp: 1,
+		name: "Ultra Frost Storm",
+		pp: 5,
 		noPPBoosts: true,
-		priority: 5,
+		priority: 0.5,
 		selfdestruct: "no",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "Thunder", target);
+			this.add('-anim', source, "Blizzard", target);
 		},
 		desc: "No Effect.",
 		onHit: function (target, source, move) {
 			this.add('c|@SparkyHeliolisk|Let me just PR that real quick!');
 		},
 		target: "normal",
-		type: "Electric",
+		type: "Ice",
 	},
 	// HoeenHero
 	scripting: {
