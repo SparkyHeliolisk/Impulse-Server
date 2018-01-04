@@ -58,14 +58,6 @@ exports.commands = {
 		if (!target) return this.sendReply('/lick needs a target.');
 		this.parse('/me licks ' + target + ' excessively!');
 	},
-	'!hex': true,
-	gethex: 'hex',
-	hex: function (target, room, user) {
-		if (!this.runBroadcast()) return;
-		if (!this.canTalk()) return;
-		if (!target) target = toId(user.name);
-		return this.sendReplyBox(`${WL.nameColor(target.trim(), true)}.  The hexcode for this name color is: ${WL.hashColor(target)}.`);
-	},
 	rsi: 'roomshowimage',
 	roomshowimage: function (target, room, user) {
 		if (!this.can('ban', null, room)) return false;
