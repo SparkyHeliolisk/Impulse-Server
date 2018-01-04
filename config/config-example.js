@@ -28,6 +28,17 @@ exports.bindaddress = '0.0.0.0';
 //   to 1.
 exports.workers = 1;
 
+exports.wsdeflate = null;
+/* exports.wsdeflate = {
+    level: 5,
+    memLevel: 8,
+    stratrgy: 0,
+    noContextTakeover: true,
+    requestNoContextTakeover: true,
+    maxWindowBits: 15,
+    requestMaxWindowBits: 15,
+}*/
+
 // TODO: allow SSL to actually be possible to use for third-party servers at
 // some point.
 
