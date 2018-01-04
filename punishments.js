@@ -483,7 +483,7 @@ Punishments.punish = function (user, punishment, recursionKeys) {
  * @param {Punishment} punishment
  */
 Punishments.punishName = function (userid, punishment) {
-	let foundKeys = Punishments.search(userid)[0].map((/** @type {string} */ key) => key.split(':')[0]);
+	let foundKeys = Punishments.search(userid)[0].map(key => key.split(':')[0]);
 	let userids = new Set([userid]);
 	let ips = new Set();
 	for (let key of foundKeys) {
@@ -602,7 +602,7 @@ Punishments.roomPunish = function (room, user, punishment, recursionKeys) {
  * @param {Punishment} punishment
  */
 Punishments.roomPunishName = function (room, userid, punishment) {
-	let foundKeys = Punishments.search(userid)[0].map((/** @type {string} */ key) => key.split(':')[0]);
+	let foundKeys = Punishments.search(userid)[0].map(key => key.split(':')[0]);
 	let userids = new Set([userid]);
 	let ips = new Set();
 	for (let key of foundKeys) {
@@ -1208,7 +1208,7 @@ Punishments.checkIp = function (user, connection) {
 		}
 	}
 
-	Dnsbl.reverse(ip).catch((/** @type {Error} */ e) => {
+	Dnsbl.reverse(ip).catch(e => {
 		// If connection.user is reassigned before async tasks can run, user
 		// may no longer be equal to it.
 		user = connection.user || user;
@@ -1220,14 +1220,14 @@ Punishments.checkIp = function (user, connection) {
 			return null;
 		}
 		throw e;
-	}).then((/** @type {string} */ host) => {
+	}).then(host => {
 		user = connection.user || user;
 		if (host) user.latestHost = host;
 		Chat.hostfilter(host, user, connection);
 	});
 
 	if (Config.dnsbl) {
-		Dnsbl.query(connection.ip).then((/** @type {boolean} */ isBlocked) => {
+		Dnsbl.query(connection.ip).then(isBlocked => {
 			user = connection.user || user;
 			if (isBlocked) {
 				if (!user.locked && !user.autoconfirmed) {
