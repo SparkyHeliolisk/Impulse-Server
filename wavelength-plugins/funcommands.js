@@ -78,7 +78,7 @@ exports.commands = {
 	},
 	moddeclarehelp: ["/declaremod [message] - Displays a red [message] to all authority in the respected room.  Requires * # & ~"],
 	ks: 'kickserver',
-	kickserver: function (target, room, user){
+	kickserver: function (target, room, user) {
 		if (!this.can('ban')) return this.errorReply("/kickserver [username] - Access Denied.");
 		if (!target) return this.parse('/help kickserver');
 		target = this.splitTarget(target);
