@@ -122,7 +122,7 @@ global.WL = require('./WL.js').WL;
 
 global.Tournaments = require('./tournaments');
 
-global.Console = require('./console.js');
+global.Console = require('./console');
 
 global.Ontime = {};
 
