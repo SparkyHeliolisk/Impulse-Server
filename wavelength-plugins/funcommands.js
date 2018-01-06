@@ -1,6 +1,5 @@
 'use strict';
 //Useless Commands
-
 exports.commands = {
 	s: 'spank',
 	spank: function (target, room, user) {
@@ -66,28 +65,28 @@ exports.commands = {
 		if (!this.runBroadcast()) return;
 		this.sendReplyBox("<img src=" + parts[0] + " width=" + parts[1] + " height=" + parts[1]);
 	},
-	roomshowimagehelp: ["!rsi [image], [width], [height] - Broadcasts an image to the room"],
-	pdeclare: function (target, room, user, connection, cmd) {
-		if (!target) return this.parse('/help declare');
-		if (!this.can('declare', null, room)) return false;
-		if (!this.canTalk()) return;
-		if (cmd === 'pdeclare') {
-			this.add('|raw|<div class="broadcast-purple"><b>' + target + '</b></div>');
-		} else if (cmd === 'pdeclare') {
-			this.add('|raw|<div class="broadcast-purple"><b>' + target + '</b></div>');
-		}
-		this.logModCommand(user.name + ' declared ' + target);
-	},
 	staffdeclare: 'moddeclare',
 	modmsg: 'moddeclare',
 	declaremod: 'moddeclare',
 	moddeclare: function (target, room, user) {
 		if (!target) return this.parse('/help moddeclare');
-		if (!this.can('declare', null, room)) return false;
+		if (!this.can('declare', null, room)) return this.errorReply("/Moddeclare - Access Denied.");
 		if (!this.canTalk()) return;
 		let declareHTML = Chat.html`<div class="broadcast-red"><i>Private Staff Message (Driver+) from ${user.name}:</i><br /><strong>${target}</strong></div>`;
 		this.privateModCommand(`|raw|${declareHTML}`);
 		this.logModCommand(`${user.name} mod declared ${target}`);
 	},
 	moddeclarehelp: ["/declaremod [message] - Displays a red [message] to all authority in the respected room.  Requires * # & ~"],
+	ks:'kickserver',
+	kickserver:function(target,room,user){
+		if (!this.can('ban')) return this.errorReply("/kickserver [username] - Access Denied.");
+		if (!target) return this.parse('/help kickserver');
+		target = this.splitTarget(target);
+		let targetUser = this.targetUser;
+		if (target.length > 19) return this.errorReply("' User" + this.targetUsername + "' not found.");
+		if (!targetUser) return this.errorReply("User '" + this.targetUsername + "'not found.");
+		this.addModCommand(targetUser.name + " was kicked from the server by " + user.name + ".");
+		targetUser.disconnectAll();
+		},
+		kickserverhelp: ["/kickserver OR /ks [username] - kick an user from the server. Requires: @ & ~"],
 };
