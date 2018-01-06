@@ -70,7 +70,7 @@ exports.commands = {
 	declaremod: 'moddeclare',
 	moddeclare: function (target, room, user) {
 		if (!target) return this.parse('/help moddeclare');
-		if (!this.can('declare', null, room)) return this.errorReply("/Moddeclare - Access Denied.");
+		if (!this.can('declare', null, room)) return this.errorReply("/moddeclare - Access Denied.");
 		if (!this.canTalk()) return;
 		let declareHTML = Chat.html`<div class="broadcast-red"><i>Private Staff Message (Driver+) from ${user.name}:</i><br /><strong>${target}</strong></div>`;
 		this.privateModCommand(`|raw|${declareHTML}`);
