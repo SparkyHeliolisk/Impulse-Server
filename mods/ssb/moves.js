@@ -77,7 +77,7 @@ exports.BattleMovedex = {
 	kill: {
 		category: "Special",
 		accuracy: true,
-		basePower: 10000000000000000000000000000000000000000000000000
+		basePower: 10000
 		isNonstandard: true,
 		name: ".Kill",
 		pp: 1,
