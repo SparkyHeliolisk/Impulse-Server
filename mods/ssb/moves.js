@@ -106,7 +106,7 @@ exports.BattleMovedex = {
 		name: "Ultra Frost Storm",
 		pp: 5,
 		noPPBoosts: true,
-		priority: 0.5,
+		priority: 0,
 		selfdestruct: "no",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
