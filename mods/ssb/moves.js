@@ -1,7 +1,7 @@
 "use strict";
 
 exports.BattleMovedex = {
-	// Insane Assasin
+   // Insane Assasin
 	assassinsrevenge: {
 		category: "Physical",
 		accuracy: 100,
@@ -77,8 +77,7 @@ exports.BattleMovedex = {
 	kill: {
 		category: "Special",
 		accuracy: true,
-		basePower: 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
-		id: ".kill",
+		basePower: 10000000000000000000000000000000000000000000000000
 		isNonstandard: true,
 		name: ".Kill",
 		pp: 1,
