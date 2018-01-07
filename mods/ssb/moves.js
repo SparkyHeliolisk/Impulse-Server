@@ -100,7 +100,7 @@ exports.BattleMovedex = {
 	ultrafroststorm: {
 		category: "Special",
 		accuracy: true,
-		basePower: 150,
+		basePower: 130,
 		id: "ultrafroststorm",
 		isNonstandard: true,
 		name: "Ultra Frost Storm",
